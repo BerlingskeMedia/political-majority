@@ -1,0 +1,10 @@
+{
+  "name": "political-majority",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.2.25",
+    "d3": "~3.4.11",
+    "angular-touch": "~1.2.25",
+    "x2js": "~1.1.7"
+  }
+}

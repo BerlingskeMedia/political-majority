@@ -1,0 +1,10 @@
+p Klik partierne til eller fra
+ul
+  li(
+    ng-repeat="entry in poll.entries"
+    ng-class="{'active': view[entry.party.letter] == 1}"
+    ng-style="{background: entry.color}"
+    ng-click="toogleParty($index)"
+  )
+    span
+    | {{entry.party.name}}

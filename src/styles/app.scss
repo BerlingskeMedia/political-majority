@@ -1,0 +1,351 @@
+$grey: #E6E7E9;
+$dark-grey: #777777;
+$menuWidth: 220px;
+$svgWidth-big: 450px;
+$svgWidth-medium: 300px;
+$svgWidth-small: 200px;
+
+@keyframes pulse_animation {
+  50% {
+    transform: scale(.9);
+  }
+}
+
+political-majority {
+  display: block;
+  margin-top: 15px;
+
+  h5 {
+    display: inline-block;
+    width: $svgWidth-medium;
+    margin: 0 20px;
+    text-align: center;
+
+    @media (max-width: 599px) {
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      width: $svgWidth-big;
+    }
+
+    @media (min-width: 992px) {
+      width: $svgWidth-small;
+    }
+
+    @media (min-width: 1200px) and (min-width: 768px) {
+      width: $svgWidth-medium;
+    }
+  }
+
+  button {
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:focus, &:focus:active {
+      outline: none !important;
+    }
+  }
+
+  nav {
+    position: relative;
+    margin-bottom: 15px;
+
+    .pull-left {
+      @media (max-width: 599px) {
+        float: none !important;
+      }
+    }
+
+    .btn {
+      width: $menuWidth;
+      font-size: 14px;
+      border: 1px solid #bcbec0;
+      background: #e6e7e8;
+      border-radius: 0px;
+      padding: 6px;
+
+      @media (max-width: 599px) {
+        width: 100%;
+      }
+
+      span {
+        display: inline-block;
+        width: $menuWidth - 14;
+        background: #000;
+        color: #fff;
+        padding: 3px 0;
+
+        @media (max-width: 599px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  majority-view {
+    width: 100%;
+
+    @media (min-width: 992px) {
+      width: 50%;
+    }
+
+    party-menu {
+      width: $menuWidth;
+      background: $grey;
+      display: inline-block;
+      padding: 2px 5px;
+
+      @media (max-width: 599px) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      p {
+        text-align: center;
+        font-size: 14px;
+        margin: 5px 0 10px 0;
+      }
+
+      ul {
+        list-style-type: none;
+        display: block;
+        padding: 0;
+        margin: 0;
+
+        li {
+          color: #fff;
+          margin: 5px 0;
+          font-size: 14px;
+          cursor: pointer;
+
+          span {
+            color: #000;
+            border: 1px solid #fff;
+            background: $grey;
+            width: 25px;
+            display: inline-block;
+            text-align: center;
+            margin-right: 5px;
+
+            &:before {
+              content: "+";
+            }
+          }
+
+          &.active {
+            span:before {
+              content: "-";
+            }
+          }
+        }
+      }
+    }
+
+    majority-graf {
+      height: 300px;
+      width: $svgWidth-medium;
+      margin: 0 20px;
+
+      @media (max-width: 599px) {
+        width: 100%;
+      }
+
+      @media (min-width: 768px) {
+        width: $svgWidth-big;
+      }
+
+      @media (min-width: 992px) {
+        width: $svgWidth-small;
+      }
+
+      @media (min-width: 1200px) and (min-width: 768px) {
+        width: $svgWidth-medium;
+      }
+
+      svg {
+        height: 100%;
+        width: 100%;
+
+        .layout {
+          circle.empty {
+            fill: transparent;
+            stroke: $dark-grey;
+            stroke-width: 1px;
+          }
+
+          circle.filled {
+            fill: $dark-grey;
+
+            &.goal {
+              fill: #f87016;
+              animation-name: "pulse_animation";
+              animation-duration: 1s;
+              animation-timing-function: ease;
+              animation-delay: 0s;
+              animation-iteration-count: infinite;
+              animation-direction: normal;
+              animation-fill-mode: none;
+              animation-play-state: running;
+            }
+          }
+
+          .counter {
+            font: {
+              size: 45px;
+              weight: bolder;
+            }
+            fill: #fff;
+          }
+
+          line {
+            stroke: #000;
+            stroke-width: 1;
+          }
+        }
+
+        .chart {
+          .slice {
+            stroke: #fff;
+            stroke-width: 2px;
+          }
+
+          .value {
+            font-size: 15px;
+            @media (min-width: 992px) {
+              font-size: 10px;
+            }
+
+            @media (min-width: 1200px) and (min-width: 768px) {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  date-menu {
+    $width: 170px;
+    $selectorMargin: 10px;
+    $selectorWidth: $width - ($selectorMargin * 2);
+    $selectorHeight: 220px;
+    $carouselMargin: 20px;
+
+    position: absolute;
+    top: 0px;
+    width: $width + 2;
+    transform: translate3d(0, 0, 0);
+    border: 1px solid #000;
+    background: #fff;
+
+    &.two {
+      right: 0;
+    }
+
+    menu-header {
+      display: inline-block;
+      user-select: none;
+      font-size: 12px;
+
+      menu-helper {
+        position: absolute;
+        top: 5px;
+        left: $selectorMargin;
+        cursor: move;
+        font-weight: lighter;
+
+        &:before {
+          font-family: FontAwesome;
+          content: "\f047";
+        }
+      }
+
+      .close {
+        position: absolute;
+        top: 0px;
+        right: 5px;
+        font-weight: lighter;
+      }
+    }
+
+    menu-selectors {
+      display: block;
+
+      .selector {
+        width: $selectorWidth;
+        background: #000;
+        color: #fff;
+        user-select: none;
+        margin: $selectorMargin;
+        float: left;
+        font: {
+          size: 12px;
+          weight: lighter;
+        }
+
+        ul {
+          list-style-type: none;
+          padding: 0;
+          display: block;
+          height: $selectorHeight;
+          overflow-y: scroll;
+
+          li {
+            padding: 2px 2px 2px 10px;
+            text-transform: uppercase;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    year-selector {
+      position: relative;
+      width: $selectorWidth;
+      height: 30px;
+      margin-bottom: 5px;
+      display: block;
+
+      i.fa {
+        color: #fff;
+        position: absolute;
+        top: -2px;
+        cursor: pointer;
+        font-size: 35px;
+        z-index: 100;
+
+        &:first-child {
+          left: 5px;
+        }
+
+        &:last-child {
+          right: 5px;
+        }
+      }
+
+      year-carousel {
+        $left-pos: 15px;
+
+        position: absolute;
+        top: 0px;
+        left: $carouselMargin;
+        width: $selectorWidth - ($carouselMargin * 2);
+        overflow-x: hidden;
+        overflow-y: hidden;
+        white-space: nowrap;
+
+        year {
+          width: $selectorWidth - ($carouselMargin * 2);
+          display: inline-block;
+          background: transparent;
+          text-align: center;
+          font: {
+            size: 20px;
+            weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

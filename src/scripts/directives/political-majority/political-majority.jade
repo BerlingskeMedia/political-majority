@@ -1,0 +1,19 @@
+nav(role="navigation")
+  .pull-left
+    button.btn(ng-click="showMenu='one'")
+      span VÆLG DATO
+    h5 {{polls.one.datetime | date:'d. MMMM y'}}
+  .pull-right.hidden-xs.hidden-sm
+    h5 {{polls.two.datetime | date:'d. MMMM y'}}
+    button.btn(ng-click="showMenu='two'")
+      span VÆLG DATO
+  .clearfix
+  date-menu(ng-show="showMenu=='one'" show-menu="showMenu" polls="polls")
+  date-menu.two(ng-show="showMenu=='two'" show-menu="showMenu" polls="polls")
+majority-view.pull-left
+  party-menu.pull-left(poll="polls.one" view="view.one")
+  majority-graf.pull-left(poll="polls.one" view="view.one" chart-id="one")
+majority-view.pull-left.hidden-xs.hidden-sm
+  party-menu.pull-right(poll="polls.two" view="view.two")
+  majority-graf.pull-right(poll="polls.two" view="view.two" chart-id="two")
+.clearfix

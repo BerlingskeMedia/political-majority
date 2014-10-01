@@ -1,0 +1,14 @@
+menu-header
+  menu-helper &nbsp; TRÆK MIG RUNDT
+  .close(ng-click="showMenu=false") &times;
+  .clearfix
+menu-selectors
+  .selector
+    year-selector
+      i.fa.fa-caret-left(ng-click="yearScroll('left')")
+      year-carousel
+        year(ng-repeat="year in years") {{year}}
+      i.fa.fa-caret-right(ng-click="yearScroll('right')")
+    ul.date
+      li.date(ng-repeat="poll in pollList" ng-click="setNewPoll($index)") {{poll.datetime | polldate | date:'d. MMMM'}}
+  .clearfix
