@@ -2,15 +2,15 @@ angular.module "pollSorterService", []
   .service "pollSorter", ($filter) ->
     sort: (data) ->
       partyColors =
-        V: "hsl(199, 96%, 38%)"
-        A: "hsl(356, 74%, 50%)"
-        B: "hsl(326, 92%, 47%)"
-        F: "hsl(355, 69%, 36%)"
-        K: "hsl(36, 85%, 62%)"
-        O: "hsl(203, 93%, 24%)"
-        I: "hsl(7, 84%, 54%)"
-        "Ø": "hsl(357, 62%, 29%)"
-        C: "hsl(150, 94%, 26%)"
+        "Ø": "#731525"
+        F: "#9C1D2A"
+        A: "#E32F3B"
+        B: "#E52B91"
+        C: "#0F854B"
+        V: "#0F84BB"
+        O: "#005078"
+        I: "#EF8535"
+        K: "#F0AC55"
       poll =
         datetime: new Date data.datetime.replace(" ", "T")
         entries: $filter('orderBy')(data.entries.entry, 'party.letter')
