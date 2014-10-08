@@ -1,5 +1,5 @@
 $grey: #E6E7E9;
-$dark-grey: #777777;
+$dark-grey: #3f3f3f;
 $menuWidth: 220px;
 $svgWidth-big: 450px;
 $svgWidth-medium: 300px;
@@ -178,7 +178,7 @@ political-majority {
             fill: $dark-grey;
 
             &.goal {
-              fill: #f87016;
+              fill: #14B014;
               animation-name: "pulse_animation";
               animation-duration: 1s;
               animation-timing-function: ease;
