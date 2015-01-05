@@ -46,7 +46,12 @@ angular.module "dateMenuDirective", []
 
       getPollDates = ->
         xmlGetter.get("#{activeYear}/10.xml").then (data) ->
-          scope.pollList = data.result.polls.poll
+          if data.error
+            activeYear -= 1
+            scope.years = [activeYear..2010]
+            getPollDates()
+          else
+            scope.pollList = data.result.polls.poll
 
       scope.years = [currentYear..2010]
 
