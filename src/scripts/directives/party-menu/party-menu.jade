@@ -3,7 +3,7 @@ ul
   li(
     ng-repeat="entry in poll.entries"
     ng-class="{'active': view[entry.party.letter] == 1}"
-    ng-style="{background: entry.color}"
+    ng-style="{background: partyColors[entry.party.letter]}"
     ng-click="toogleParty($index)"
   )
     span
