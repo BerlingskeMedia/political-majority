@@ -33,7 +33,7 @@ political-majority {
     }
 
     @media (min-width: 1200px) and (min-width: 768px) {
-      width: $svgWidth-medium;
+      width: $svgWidth-small;
     }
   }
 
@@ -160,7 +160,7 @@ political-majority {
       }
 
       @media (min-width: 1200px) and (min-width: 768px) {
-        width: $svgWidth-medium;
+        width: $svgWidth-small;
       }
 
       svg {
@@ -217,7 +217,7 @@ political-majority {
             }
 
             @media (min-width: 1200px) and (min-width: 768px) {
-              font-size: 15px;
+              font-size: 10px;
             }
           }
         }
